@@ -4,13 +4,37 @@
     command = "npm run build"
 
 [[redirects]]
-    from = "/docs/*"
+    from = "/unauthorized"
+    to = "/unauthorized.html"
     status = 200
     force = true
-    conditions = {Role = ["Employee", "Contractor", "Customer"]}
 
 [[redirects]]
-    from = "/docs/*"
-    to = "/unauthorized"
+    from = "/login"
+    to = "/.netlify/functions/login"
+    status = 200
+    force = true
+
+[[redirects]]
+    from = "/logout"
+    to = "/.netlify/functions/logout"
+    status = 200
+    force = true
+
+[[redirects]]
+    from = "/callback"
+    to = "/.netlify/functions/callback"
+    status = 200
+    force = true
+
+[[redirects]]
+    from = "/*"
+    status = 200
+    force = true
+    condition = {role = ["authenticated"]}
+
+[[redirects]]
+    from = "/*"
+    to = "/login"
     status = 401
     force = true
