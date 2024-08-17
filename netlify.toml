@@ -31,7 +31,7 @@
     from = "/*"
     status = 200
     force = true
-    condition = {role = ["authenticated"]}
+    conditions = {Role = ["authenticated"]}
 
 [[redirects]]
     from = "/*"
