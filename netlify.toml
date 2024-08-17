@@ -28,13 +28,21 @@
     force = true
 
 [[redirects]]
-    from = "/*"
-    status = 200
+    from = "/foo"
+    to = "/"
+    status = 401
     force = true
     conditions = {Role = ["authenticated"]}
 
 [[redirects]]
-    from = "/*"
-    to = "/login"
+    from = "/bar"
+    to = "/"
     status = 401
     force = true
+    conditions = {Role = []}
+
+#[[redirects]]
+#    from = "/*"
+#    to = "/login"
+#    status = 401
+#    force = true
